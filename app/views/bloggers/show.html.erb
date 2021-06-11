@@ -1,0 +1,8 @@
+<%# total likes %>
+<%# link to blogger's featured post %>
+<%# AKA post with most likes %>
+<%# BONUS list of users top 5 most written about destinations %>
+<%# AKA destinations with the most posts %>
+<h1><%= @blogger.name %></h1>
+<h3><%= @blogger.total_likes %> post likes :)</h3>
+<h6><%= link_to @blogger.featured_post.title, post_path(@blogger.featured_post) %> </h6>
