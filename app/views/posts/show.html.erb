@@ -1,1 +1,20 @@
-<h1>Hello World</h1>
+<%# edit button %>
+
+<h1>Post Number <%=@post.id%> </h1>
+<h3> <%= @post.title %> </h3>
+
+<h3> Post Page </h3>
+Post Title: <%= @post.title %>
+<br>
+Post Content: <%= @post.content%>
+<br>
+Post Likes: <%= @post.likes%>
+<br>
+Post Blogger: <%= link_to @post.blogger.name, blogger_path(@post.blogger)%>
+<br>
+Post Destination: <%= link_to @post.destination.name, destination_path(@post.destination)%>
+
+<br>
+
+<%# button_to 'Click for a like' , addlike_path(@post) %>
+<%= button_to "Click to Like", like_path(@post.id), :method => "patch" %>

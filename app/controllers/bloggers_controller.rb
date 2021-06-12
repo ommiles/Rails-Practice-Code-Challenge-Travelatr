@@ -1,11 +1,11 @@
 class BloggersController < ApplicationController
 
-    def new
-        @blogger = Blogger.new
+    def index
+        @bloggers = Blogger.all
     end
 
-    def show
-        @blogger = Blogger.find(params[:id])
+    def new
+        @blogger = Blogger.new
     end
 
     def create
@@ -15,6 +15,11 @@ class BloggersController < ApplicationController
         else
             render :new
         end
+    end
+
+
+    def show
+        @blogger = Blogger.find(params[:id])
     end
 
     private
