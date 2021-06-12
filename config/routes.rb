@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resources :bloggers
   resources :destinations
   resources :posts
+  # post '/addlike/:post_id', to: 'posts#like_post', as: 'addlike'
+  patch 'post/:id/like', to: 'posts#like', as: 'like' 
+  patch 'post/:id/dislike', to: 'posts#unlike', as: 'dislike' 
 end

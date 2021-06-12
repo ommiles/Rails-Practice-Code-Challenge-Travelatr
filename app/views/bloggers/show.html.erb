@@ -4,5 +4,5 @@
 <%# BONUS list of users top 5 most written about destinations %>
 <%# AKA destinations with the most posts %>
 <h1><%= @blogger.name %></h1>
-<h3><%= @blogger.total_likes %> post likes :)</h3>
-<h6><%= link_to @blogger.featured_post.title, post_path(@blogger.featured_post) %> </h6>
+<h3> <%= "#{@blogger.name}'s"  %> Most Liked Post: <%= link_to @blogger.featured_post.title, post_path(@blogger.featured_post) %> </h3>
+<h4>Total post likes: <%= @blogger.total_likes %> :)</h4>
