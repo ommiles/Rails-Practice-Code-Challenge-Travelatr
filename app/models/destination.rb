@@ -5,6 +5,8 @@ class Destination < ApplicationRecord
 
     def recent_posts
         self.posts.last(5)
+        # ALTERNATIVE:
+        # self.posts.limit(5)
     end
 
     def featured_post
@@ -12,6 +14,10 @@ class Destination < ApplicationRecord
     end
 
     def average_age
-        self.bloggers.average(:age)
+        unique_bloggers = self.bloggers.uniq
+        blogger_ages = unique_bloggers.collect {|blogger| blogger.age}
+        blogger_ages.sum / unique_bloggers.count
+        # ALTERNATIVE:
+        # self.bloggers.average(:age)
     end
 end

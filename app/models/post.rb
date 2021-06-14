@@ -5,6 +5,8 @@ class Post < ApplicationRecord
 
     validates :title, presence: true
     validates :content, length: { minimum: 100 }
+    # each blogger writes about each destination only once
+    validates :destination, uniqueness: { scope: blogger }
 
     def increase_likes
         self.likes += 1
